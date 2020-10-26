@@ -7,5 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Category extends Model
 {
-    use HasFactory;
+    protected $table = "table_category";
+    protected $guarded = ['id'];
+
+    // public function material(){
+    //     return $this->hasMany('App\Material', 'material_id');
+    // }
 }

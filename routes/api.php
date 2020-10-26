@@ -14,6 +14,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+//buat ngambil material
+Route::get('/getMaterial','MaterialAreaController@getMaterial');
+Route::get('/showMaterial', 'MaterialAreaController@showMaterial');
+Route::get('/getAllArea', 'AreaController@getAllArea');
+// Route::middleware('auth:api')->get('/user', function (Request $request) {
+//     return $request->user();
+// }
+// );

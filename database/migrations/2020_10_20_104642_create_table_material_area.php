@@ -14,8 +14,11 @@ class CreateTableMaterialArea extends Migration
     public function up()
     {
         Schema::create('table_material_area', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table->bigIncrements('id');
+            $table->integer('material_id');
+            $table->integer('area_id');
+            $table->integer('price');
+
         });
     }
 
