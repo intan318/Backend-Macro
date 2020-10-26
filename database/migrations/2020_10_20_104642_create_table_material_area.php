@@ -18,7 +18,7 @@ class CreateTableMaterialArea extends Migration
             $table->integer('material_id');
             $table->integer('area_id');
             $table->integer('price');
-
+            $table->timestamps();
         });
     }
 

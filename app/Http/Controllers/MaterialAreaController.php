@@ -66,4 +66,21 @@ class MaterialAreaController extends Controller
             'materialarea' => $materialarea
         ]);
     }
+
+    public function updateMaterialArea(Request $request, $id)
+    {
+        
+        $materialarea = MaterialArea::find($id);
+
+        if($request->price){
+            $materialarea->price = $request->price;
+        }
+
+        $materialarea->save();
+
+        return response()->json([
+            'message' => 'Edited',
+            'updatematerialarea'=> $materialarea
+        ]);
+    }
 }
