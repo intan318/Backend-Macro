@@ -22,6 +22,7 @@ Route::put('/updateMaterialArea/{id}', 'App\Http\Controllers\MaterialAreaControl
 
 Route::post('/storeMaterial', 'App\Http\Controllers\MaterialController@storeMaterial');
 Route::put('/updateMaterial/{id}', 'App\Http\Controllers\MaterialController@updateMaterial');
+Route::post('/deleteMaterial/{id}', 'App\Http\Controllers\MaterialController@deleteMaterial');
 
 Route::get('/getAllArea', 'App\Http\Controllers\AreaController@getAllArea');
 Route::get('/getAllCategory', 'App\Http\Controllers\CategoryController@getAllCategory');

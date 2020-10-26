@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Material;
+use App\Models\MaterialArea;
 
 class MaterialController extends Controller
 {
@@ -92,10 +93,24 @@ class MaterialController extends Controller
 
 
         return response()->json([
-            'message' => 'Material edited',
+            'message' => "Material edited",
             'updatematerial' => $material
         ]);
      }
 
      //delete material
+     public function deleteMaterial($id)
+     {
+        $material = Material::find($id);
+
+        if($material){
+            $material->delete();
+        }
+
+        MaterialArea::where('material_id', $id)->first()->delete();
+
+        return response()->json([
+            'success' => "Material successfullydeleted!"
+        ]);
+     }
 }

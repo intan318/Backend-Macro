@@ -79,8 +79,23 @@ class MaterialAreaController extends Controller
         $materialarea->save();
 
         return response()->json([
-            'message' => 'Edited',
+            'message' => "Edited",
             'updatematerialarea'=> $materialarea
         ]);
     }
+
+    // public function deleteMaterial($id)
+    // {
+    //     $materialarea = MaterialArea::find($id);
+
+    //     if ($materialarea){
+    //         $materialarea->delete();
+    //     }
+
+    //     Material::where('materia_area_id', $id)->first()->delete();
+
+    //     return response()->json([
+    //         'success' => "Material successfully deleted!"
+    //     ]);
+    // }
 }
