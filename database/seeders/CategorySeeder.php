@@ -16,7 +16,12 @@ class CategorySeeder extends Seeder
     {
         $category = [
             ['Semen'],
-            ['Pasir']
+            ['Pasir'],
+            ['Bata'],
+            ['Besi Pokok'], 
+            ['Besi Begel'], 
+            ['Batu Split'], 
+            ['Beksiting']
         ];
 
         for ($i = 0; $i < count($category); $i++){

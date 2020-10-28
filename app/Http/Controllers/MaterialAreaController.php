@@ -17,7 +17,8 @@ class MaterialAreaController extends Controller
         $chosenCategory = $request->category;
         $chosenArea = $request->area;
         $material = MaterialArea::join('table_material', 'table_material.id', 'table_material_area.material_id')
-        ->select('table_material.*')
+        // ->select('table_material.*')
+        ->select('table_material.*', 'table_material_area.price')
         ->where('table_material.category_id', $chosenCategory)
         ->where('table_material_area.id', $chosenArea)
         ->get();
@@ -36,13 +37,29 @@ class MaterialAreaController extends Controller
     public function showMaterial()
     {
         $material = Material::all();
+        // $material=Material::all()
+        // ->select('table_material.*', 'table_material_area.price')
+        // ->get();
 
         return response()->json([
             'material'=> $material
+            // 'price' => 
         ]);
     }
 
-   
+   //semua material dan harga
+    public function showAllMaterial()
+    {
+        $material = MaterialArea::join('table_material', 'table_material.id', 'table_material_area.material_id')
+        ->select('table_material.*', 'table_material_area.price')
+        ->get();
+
+        return response()->json([
+            'material'=>$material
+        ]);
+    }
+
+
     public function storeMaterialArea(Request $request)
     {
         $newmaterialarea = validator([
