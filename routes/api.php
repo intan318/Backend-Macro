@@ -19,8 +19,10 @@ Route::get('/getMaterial','App\Http\Controllers\MaterialAreaController@getMateri
 Route::get('/showMaterial', 'App\Http\Controllers\MaterialAreaController@showMaterial');
 // Route::get('/showAllMaterial/{category_id}', 'App\Http\Controllers\MaterialAreaController@showAllMaterial');
 Route::get('/showAllMaterial', 'App\Http\Controllers\MaterialAreaController@showAllMaterial');
+Route::get('/showDefaultMaterial', 'App\Http\Controllers\MaterialAreaController@showDefaultMaterial');
 Route::post('/storeMaterialArea', 'App\Http\Controllers\MaterialAreaController@storeMaterialArea');
 Route::put('/updateMaterialArea/{id}', 'App\Http\Controllers\MaterialAreaController@updateMaterialArea');
+
 
 Route::post('/storeMaterial', 'App\Http\Controllers\MaterialController@storeMaterial');
 Route::put('/updateMaterial/{id}', 'App\Http\Controllers\MaterialController@updateMaterial');
