@@ -19,7 +19,7 @@ class CreateTableMaterial extends Migration
             $table->string('material_name');
             $table->string('material_brand');
             $table->string('material_grade');
-            $table->integer('material_size');
+            $table->double('material_size');
             $table->string('material_unit');
             $table->integer('seller_id')->nullable();
             $table->integer('category_id');

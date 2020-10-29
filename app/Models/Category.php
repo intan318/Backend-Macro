@@ -10,7 +10,7 @@ class Category extends Model
     protected $table = "table_category";
     protected $guarded = ['id'];
 
-    // public function material(){
-    //     return $this->hasMany('App\Material', 'material_id');
-    // }
+    public function material(){
+        return $this->hasMany('App\Models\Material', 'category_id');
+    }
 }

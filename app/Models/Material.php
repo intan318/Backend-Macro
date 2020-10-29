@@ -10,9 +10,11 @@ class Material extends Model
     protected $table = "table_material";
     protected $guarded = ['id'];
 
+    protected $with = ['materialArea'];
+
     public function materialArea()
     {
-        return $this->belongsTo('App\Models\MaterialArea', 'material_area_id');
+        return $this->hasMany('App\Models\MaterialArea', 'material_id');
     }
 
     public function category()

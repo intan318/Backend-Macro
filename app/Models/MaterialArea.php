@@ -10,6 +10,8 @@ class MaterialArea extends Model
     protected $table = "table_material_area";
     protected $guarded = ['id'];
 
+    protected $with = ['area'];
+
     public function material()
     {
         return $this->belongsTo('App\Models\Material', 'material_id');

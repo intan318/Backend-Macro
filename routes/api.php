@@ -17,7 +17,8 @@ use Illuminate\Support\Facades\Route;
 //buat ngambil material
 Route::get('/getMaterial','App\Http\Controllers\MaterialAreaController@getMaterial');
 Route::get('/showMaterial', 'App\Http\Controllers\MaterialAreaController@showMaterial');
-Route::Get('/showAllMaterial', 'App\Http\Controllers\MaterialAreaController@showAllMaterial');
+// Route::get('/showAllMaterial/{category_id}', 'App\Http\Controllers\MaterialAreaController@showAllMaterial');
+Route::get('/showAllMaterial', 'App\Http\Controllers\MaterialAreaController@showAllMaterial');
 Route::post('/storeMaterialArea', 'App\Http\Controllers\MaterialAreaController@storeMaterialArea');
 Route::put('/updateMaterialArea/{id}', 'App\Http\Controllers\MaterialAreaController@updateMaterialArea');
 
