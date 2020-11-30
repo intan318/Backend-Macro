@@ -19,28 +19,39 @@ class MaterialAreaController extends Controller
         $chosenArea = $request->area;
         $material = MaterialArea::join('table_material', 'table_material.id', 'table_material_area.material_id')
             // ->select('table_material.*')
-            ->select('table_material.*', 'table_material_area.price')
+            ->select('table_material.*', 'table_material_area.price', 'table_material_area.area_id')
             ->where('table_material.category_id', $chosenCategory)
-            ->where('table_material_area.id', $chosenArea)
+            ->where('table_material_area.area_id', $chosenArea)
             ->get();
-
+        // $materials = json_encode($material);
+       
         // $material = Material::with('materialArea', 'category')
         // ->select('table_material.*')
         // ->where('table_material.area_id')
         // ->get();
 
-        return response()->json([
-            'material' => $material
-        ]);
+        // return response()->json([    
+        //     'material' => $material, 
+        //     JSON_NUMERIC_CHECK
+        // ]);
+        
+
+        return response()->json($material)->setEncodingOptions(JSON_NUMERIC_CHECK);
     }
 
     //bener2 semua material
     public function showMaterial()
     {
-        $material = Material::all();
+        // $material = Material::all();
         // $material=Material::all()
         // ->select('table_material.*', 'table_material_area.price')
         // ->get();
+
+        $material = MaterialArea::join('table_material', 'table_material.id', 'table_material_area.material_id')
+        // ->select('table_material.*', 'table_material_area.*')
+        ->where('table_material.is_default', true)
+        ->get();
+
 
         return response()->json([
             'material' => $material

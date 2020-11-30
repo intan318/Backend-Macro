@@ -8,6 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Material extends Model
 {
     protected $table = "table_material";
+    protected $casts = [
+        'material_size' => 'float',
+    ];
     protected $guarded = ['id'];
 
     protected $with = ['materialArea'];

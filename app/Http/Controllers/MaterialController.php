@@ -110,7 +110,7 @@ class MaterialController extends Controller
         MaterialArea::where('material_id', $id)->first()->delete();
 
         return response()->json([
-            'success' => "Material successfullydeleted!"
+            'success' => "Material successfully deleted!"
         ]);
      }
 }

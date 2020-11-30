@@ -22,7 +22,7 @@ Route::get('/showAllMaterial', 'App\Http\Controllers\MaterialAreaController@show
 Route::get('/showDefaultMaterial', 'App\Http\Controllers\MaterialAreaController@showDefaultMaterial');
 Route::post('/storeMaterialArea', 'App\Http\Controllers\MaterialAreaController@storeMaterialArea');
 Route::put('/updateMaterialArea/{id}', 'App\Http\Controllers\MaterialAreaController@updateMaterialArea');
-
+                                                                          
 
 Route::post('/storeMaterial', 'App\Http\Controllers\MaterialController@storeMaterial');
 Route::put('/updateMaterial/{id}', 'App\Http\Controllers\MaterialController@updateMaterial');
@@ -32,7 +32,9 @@ Route::get('/getAllArea', 'App\Http\Controllers\AreaController@getAllArea');
 Route::get('/getAllCategory', 'App\Http\Controllers\CategoryController@getAllCategory');
 
 
+// Route::view('/material', 'Resources\Views\mater');
+
 // Route::middleware('auth:api')->get('/user', function (Request $request) {
 //     return $request->user();
 // }
-// );
+// )

@@ -23,7 +23,7 @@ class CreateTableMaterial extends Migration
             $table->string('material_unit');
             $table->integer('seller_id')->nullable();
             $table->integer('category_id');
-            
+            $table->boolean('is_default');
             $table->timestamps();
         });
     }

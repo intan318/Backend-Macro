@@ -10,7 +10,7 @@ class MaterialArea extends Model
     protected $table = "table_material_area";
     protected $guarded = ['id'];
 
-    protected $with = ['area'];
+    // protected $with = ['area'];
 
     public function material()
     {
