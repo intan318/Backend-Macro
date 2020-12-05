@@ -22,3 +22,10 @@ Route::get('material', function(){
 });
 
 
+Route::get('privacypolicy', function(){
+    return view('privacypolicy');
+});
+
+Route::get('home', function(){
+    return view('home');
+});
